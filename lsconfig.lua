@@ -33,22 +33,13 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local servers = { 'clangd' }
+local servers = { 'pyright', 'clangd' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilites,
   }
 end
-
-local pyright_path =
-  vim.fn.stdpath('config') .. '/node_modules/pyright/langserver.index.js'
-
-lspconfig.pyright.setup {
-  on_attach = on_attach,
-  cmd = { pyright_path, '--stdio' },
-  capabilities = capabilites,
-}
 
 vim.o.completeopt = 'menuone,noselect'
 
