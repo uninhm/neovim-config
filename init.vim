@@ -36,3 +36,6 @@ autocmd BufRead,BufNewFile *.porth set filetype=porth
 let g:copilot_filetypes = {
   \ 'porth': v:false,
   \ }
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
