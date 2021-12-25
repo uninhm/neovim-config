@@ -7,6 +7,9 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'zah/nim.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim'
 call plug#end()
 
 colorscheme dracula
@@ -40,3 +43,11 @@ let g:copilot_filetypes = {
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
+let mapleader = ','
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
