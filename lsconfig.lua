@@ -43,7 +43,7 @@ for _, lsp in ipairs(servers) do
 end
 
 local pyright_path =
-  vim.fn.stdpath('config') .. '/node_modules/pyright/langserver.index.js'
+  vim.fn.stdpath('data') .. '/node_modules/pyright/langserver.index.js'
 
 lspconfig.pyright.setup {
   on_attach = on_attach,
