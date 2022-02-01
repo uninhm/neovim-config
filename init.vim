@@ -43,7 +43,7 @@ let g:copilot_filetypes = {
   \ 'porth': v:false,
   \ }
 
-highlight ExtraWhitespace ctermbg=red guibg=red
+highlight link ExtraWhitespace ErrorMsg
 match ExtraWhitespace /\s\+$/
 
 let mapleader = ','
