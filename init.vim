@@ -35,7 +35,7 @@ inoremap <silent><expr> <TAB>
 
 inoremap <silent><expr> <C-j> copilot#Accept()
 
-exec 'luafile ' . stdpath('config') . '/lsconfig.lua'
+lua require('lsconfig')
 
 autocmd BufRead,BufNewFile *.porth set filetype=porth
 
@@ -47,7 +47,6 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 let mapleader = ','
-
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
