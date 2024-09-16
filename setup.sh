@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd ~
 git clone -b vim https://github.com/uninhm/neovim-config .vim
