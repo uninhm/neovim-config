@@ -3,6 +3,8 @@ call plug#begin()
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'zah/nim.vim'
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 colorscheme dracula
