@@ -3,6 +3,7 @@ call plug#begin()
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'zah/nim.vim'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
