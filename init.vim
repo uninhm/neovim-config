@@ -12,6 +12,14 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Completion
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'Exafunction/codeium.nvim'
+
+Plug 'luk400/vim-jukit', { 'on': [] }
 
 call plug#end()
 
@@ -40,6 +48,12 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Create a command JukitLoad to enable Jukit and reload the file
+command! -nargs=0 JukitLoad call plug#load("vim-jukit") | e
+nnoremap <leader>jl <cmd>JukitLoad<cr>
+
+let g:codeium_disable_bindings = 1
 
 lua << EOF
 require'colorizer'.setup(
