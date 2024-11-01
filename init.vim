@@ -21,6 +21,9 @@ Plug 'Exafunction/codeium.nvim'
 
 Plug 'luk400/vim-jukit', { 'on': [] }
 
+" Latex
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 colorscheme dracula
@@ -53,7 +56,16 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 command! -nargs=0 JukitLoad call plug#load("vim-jukit") | e
 nnoremap <leader>jl <cmd>JukitLoad<cr>
 
+" File running
+autocmd FileType python nnoremap <f5> :term python %<cr>i
+autocmd FileType haskell nnoremap <f5> :term runhaskell %<cr>i
+autocmd FileType nim nnoremap <f5> :term nim r %<cr>i
+autocmd FileType ruby nnoremap <f5> :term ruby %<cr>i
+
 let g:codeium_disable_bindings = 1
+
+let g:vimtex_view_general_viewer = 'evince'
+" let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 
 lua << EOF
 require'colorizer'.setup(
