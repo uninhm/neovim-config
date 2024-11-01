@@ -65,7 +65,6 @@ autocmd FileType ruby nnoremap <f5> :term ruby %<cr>i
 let g:codeium_disable_bindings = 1
 
 let g:vimtex_view_general_viewer = 'evince'
-" let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 
 lua << EOF
 require'colorizer'.setup(
