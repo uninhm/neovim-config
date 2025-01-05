@@ -17,6 +17,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'supermaven-inc/supermaven-nvim'
 
 Plug 'luk400/vim-jukit', { 'on': [] }
 
