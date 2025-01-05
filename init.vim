@@ -17,12 +17,12 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'Exafunction/codeium.nvim'
 
 Plug 'luk400/vim-jukit', { 'on': [] }
 
-" Latex
+" Latex and org
 Plug 'lervag/vimtex'
+Plug 'nvim-orgmode/orgmode'
 
 call plug#end()
 
@@ -62,6 +62,9 @@ autocmd FileType haskell nnoremap <f5> :term runhaskell %<cr>i
 autocmd FileType nim nnoremap <f5> :term nim r %<cr>i
 autocmd FileType ruby nnoremap <f5> :term ruby %<cr>i
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !doas tee > /dev/null %
+
 let g:codeium_disable_bindings = 1
 
 let g:vimtex_view_general_viewer = 'evince'
@@ -78,3 +81,4 @@ require'colorizer'.setup(
 EOF
 
 lua require('lsconfig')
+lua require('ts')

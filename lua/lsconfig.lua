@@ -39,7 +39,7 @@ end
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local servers = { 'pyright', 'clangd', 'nimls', 'hls', 'rust_analyzer', 'lua_ls' }
+local servers = { 'pyright', 'clangd', 'nimls', 'hls', 'rust_analyzer', 'lua_ls', 'nixd' }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -94,7 +94,6 @@ cmp.setup({
     end,
   }),
   sources = cmp.config.sources({
-    { name = 'codeium' },
     { name = 'nvim_lsp' },
     -- { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'luasnip' }, -- For luasnip users.
@@ -134,5 +133,3 @@ cmp.setup.cmdline(':', {
   }),
   matching = { disallow_symbol_nonprefix_matching = false }
 })
-
-require('codeium').setup{}
