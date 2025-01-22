@@ -94,7 +94,6 @@ cmp.setup({
     end,
   }),
   sources = cmp.config.sources({
-    { name = 'supermaven' },
     { name = 'nvim_lsp' },
     -- { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'luasnip' }, -- For luasnip users.
@@ -134,7 +133,3 @@ cmp.setup.cmdline(':', {
   }),
   matching = { disallow_symbol_nonprefix_matching = false }
 })
-
-require('supermaven-nvim').setup{
-  disable_keymaps = true,
-}
