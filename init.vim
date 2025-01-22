@@ -1,7 +1,6 @@
 call plug#begin()
 
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'zah/nim.vim'
 Plug 'norcalli/nvim-colorizer.lua'
 
 " Telescope and dependencies
