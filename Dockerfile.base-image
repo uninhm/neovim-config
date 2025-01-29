@@ -1,0 +1,23 @@
+# FROM ghcr.io/void-linux/void-musl-full AS base
+FROM neovim-base:0.1.7 AS base
+
+RUN xbps-install -Syu
+
+RUN xbps-install -y \
+  git \
+  ripgrep \
+  fzf \
+  fish-shell \
+  ncurses \
+  bash \
+  xclip \
+  openjdk21 \
+  python3 \
+  tcc \
+  make \
+  musl-devel \
+  curl \
+  neovim \
+  python3-neovim \
+  pyright \
+  xtools
