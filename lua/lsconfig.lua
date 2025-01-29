@@ -40,7 +40,7 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- local servers = { 'pyright', 'clangd', 'nimls', 'hls', 'rust_analyzer', 'lua_ls' }
-local servers = { 'jdtls' }
+local servers = { 'jdtls', 'pyright' }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -48,15 +48,6 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
   }
 end
-
-local pyright_path =
-  vim.fn.stdpath('data') .. '/node_modules/pyright/langserver.index.js'
-
-lspconfig.pyright.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = { pyright_path, '--stdio' },
-}
 
 -- vim.o.completeopt = 'menuone,noselect'
 
