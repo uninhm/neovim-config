@@ -48,17 +48,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-local pyright_path =
-  vim.fn.stdpath('data') .. '/node_modules/pyright/langserver.index.js'
-
-lspconfig.pyright.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = { pyright_path, '--stdio' },
-}
-
--- vim.o.completeopt = 'menuone,noselect'
-
 -- Set up nvim-cmp.
 local cmp = require'cmp'
 
