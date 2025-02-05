@@ -27,6 +27,8 @@ Plug 'luk400/vim-jukit', { 'on': [] }
 Plug 'lervag/vimtex'
 Plug 'nvim-orgmode/orgmode'
 
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 call plug#end()
 
 colorscheme dracula

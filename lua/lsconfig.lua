@@ -1,3 +1,6 @@
+require("mason").setup()
+require("mason-lspconfig").setup()
+
 local lspconfig = require 'lspconfig'
 
 local has_words_before = function()
@@ -39,7 +42,7 @@ end
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local servers = { 'pyright', 'clangd', 'nimls', 'hls', 'rust_analyzer', 'lua_ls', 'nixd' }
+local servers = { 'pyright', 'clangd', 'nimls', 'hls', 'rust_analyzer', 'lua_ls', 'nixd', 'jdtls' }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -61,7 +64,7 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     ['<Tab>'] = function(fallback)
       if not cmp.select_next_item() then
         if vim.bo.buftype ~= 'prompt' and has_words_before() then
