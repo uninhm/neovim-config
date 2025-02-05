@@ -70,9 +70,9 @@ autocmd FileType ruby nnoremap <f5> :term ruby %<cr>i
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !doas tee > /dev/null %
 
-let g:codeium_disable_bindings = 1
-
 let g:vimtex_view_general_viewer = 'evince'
+
+let g:AutoPairsMultilineClose = 0
 
 lua << EOF
 require'colorizer'.setup(
