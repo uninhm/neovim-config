@@ -1,8 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-local lspconfig = require 'lspconfig'
-
 local has_words_before = function()
   unpack = unpack or table.unpack
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -45,10 +43,10 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local servers = { 'pyright', 'clangd', 'nimls', 'hls', 'rust_analyzer', 'lua_ls', 'nixd', 'jdtls' }
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  vim.lsp.config(lsp, {
     capabilities = capabilities,
     on_attach = on_attach,
-  }
+  })
 end
 
 -- Set up nvim-cmp.
