@@ -2,7 +2,6 @@ call plug#begin()
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'zah/nim.vim'
-Plug 'norcalli/nvim-colorizer.lua'
 
 " Telescope and dependencies
 Plug 'nvim-telescope/telescope.nvim'
@@ -81,17 +80,6 @@ cmap w!! w !doas tee > /dev/null %
 let g:vimtex_view_general_viewer = 'evince'
 
 let g:AutoPairsMultilineClose = 0
-
-lua << EOF
-require'colorizer'.setup(
-  {
-    '*';
-  },
-  {
-    RRGGBBAA = true;
-  }
-)
-EOF
 
 lua require('lsconfig')
 lua require('ts')
