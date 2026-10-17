@@ -87,6 +87,7 @@ lua require('ts')
 set undofile
 
 " ===== Typst ==============================================
+" credits to https://www.dogeystamp.com/typst-notes2/
 
 " Open a terminal with typst watch
 function TypstWatch()
