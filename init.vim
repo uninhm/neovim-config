@@ -85,3 +85,16 @@ lua require('lsconfig')
 lua require('ts')
 
 set undofile
+
+" ===== Typst ==============================================
+
+" Open a terminal with typst watch
+function TypstWatch()
+       vsp
+       vertical resize 20
+       exec 'terminal ' .. 'typst watch ' .. expand("%:")
+       exec "norm \<c-w>h"
+endfunc
+
+nnoremap <silent> <leader>tw :call TypstWatch()<cr>
+nnoremap <silent> <leader>to :silent exec "!xdg-open '" . expand("%:p:r") . ".pdf' > /dev/null"<cr>
